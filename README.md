@@ -15,14 +15,15 @@ To create a project, type in the same directory as the ```consol.bat``` file ```
 To delete a project, type in the same directory as the ```consol.bat``` file ```consol del <name>``` where name is the project's name. Note that Consol will only detect and delete projects that are in the same directory as the ```consol.bat``` file.
 
 ## Customizing the translator
-Not every assembly language is the same. Will it be the opcodes or how memory is handled. To customize the translator file go in the ```convert``` folder and edit ```dict.py```. You will find something similar to this:
+### Changing the instructions
+Not every assembly language is the same. To customize the translator file go in the ```convert``` folder and edit ```dict.py```. You will find something similar to this:
 ``` python
 convert_dict = {
     "add": "ADDabc"
     "divide" : "DIVabc"
 }
 ```
-The keys (the first values) are the python functions, and the values (the strings after the keys) are the corresponding assembly opcode. Edit the values to change the output assembly file. For example if ```dict.py``` is like the one above and I write the code
+The keys (the first values) are the python functions, and the values (the strings after the keys) are the corresponding assembly instruction. Edit the values to change the output assembly file. For example if ```dict.py``` is like the one above and I write the code
 ``` python
 add(1, 1, 0)
 ```
@@ -56,6 +57,8 @@ add(1, 0)
 ```
 ADD 0_1
 ```
+### Adding/Removing an instruction
+Sadly this functionality is not ready yet.
 ## Editing the code
 Edit the code you find in ```<your_project_name>.cnc```.
 
