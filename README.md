@@ -16,14 +16,14 @@ To delete a project, type in the same directory as the ```consol.bat``` file ```
 
 ## Customizing the translator
 ### Changing the instructions
-Not every assembly language is the same. To customize the translator file go in the ```convert``` folder and edit ```dict.py```. You will find something similar to this:
+Not every assembly language is the same. To customize the translator edit ```dictionary.py```. You will find something similar to this:
 ``` python
 convert_dict = {
     "add": "ADDabc"
     "divide" : "DIVabc"
 }
 ```
-The keys (the first values) are the python functions, and the values (the strings after the keys) are the corresponding assembly instruction. Edit the values to change the output assembly file. For example if ```dict.py``` is like the one above and I write the code
+The keys (the first values) are the python functions, and the values (the strings after the keys) are the corresponding assembly instruction. Edit the values to change the output assembly file. For example if ```dictionary.py``` is like the one above and I write the code
 ``` python
 add(1, 1, 0)
 ```
@@ -31,7 +31,7 @@ The output will be the following:
 ```
 ADD110
 ```
-This below is another example of ```dict.py```, the code and its output.
+This below is another example of ```dictionary.py```, the code and its output.
 ``` python
 convert_dict = {
     "add": "SUM[a+b+c]"
